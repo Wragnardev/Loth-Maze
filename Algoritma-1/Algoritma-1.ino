@@ -46,5 +46,4 @@ void setup()
 
 void loop() {
   maze[x][y]=1;
-  if
 }
