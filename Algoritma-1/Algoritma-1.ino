@@ -4,6 +4,11 @@ int x=9;
 int y=0;
 
 int maze[ 17 ][ 8 ] = { { 0, 0, 0, 0, 0, 0, 0, 0 },  { 0, 0, 0, 0, 0, 0, 0, 0 },  { 0, 0, 0, 0, 0, 0, 0, 0 },  { 0, 0, 0, 0, 0, 0, 0, 0 },  { 0, 0, 0, 0, 0, 0, 0, 0 },  { 0, 0, 0, 0, 0, 0, 0, 0 },  { 0, 0, 0, 0, 0, 0, 0, 0 },  { 0, 0, 0, 0, 0, 0, 0, 0 },  { 0, 0, 0, 0, 0, 0, 0, 0 },  { 0, 0, 0, 0, 0, 0, 0, 0 },  { 0, 0, 0, 0, 0, 0, 0, 0 },  { 0, 0, 0, 0, 0, 0, 0, 0 },  { 0, 0, 0, 0, 0, 0, 0, 0 },  { 0, 0, 0, 0, 0, 0, 0, 0 },  { 0, 0, 0, 0, 0, 0, 0, 0 },  { 0, 0, 0, 0, 0, 0, 0, 0 },  { 0, 0, 0, 0, 0, 0, 0, 0 }};
+
+int leftSensor;
+int rightSensor;
+int forwardSensor;
+
 void left (){
   if(yon==0){
     yon=3;
@@ -12,8 +17,7 @@ void left (){
   }
 }
 
-void right ()
-{
+void right (){
   if(yon==3){
     yon=0;
   }else{
@@ -21,14 +25,12 @@ void right ()
   }
 }
 
-void back ()
-{
+void back (){
   right();
   right();
 }
 
-void forward()
-{
+void forward(){
   if(yon==0){
     y-=1;
   }else if(yon==1){
@@ -40,10 +42,24 @@ void forward()
   }
 }
 
-void setup()
-{
+
+
+
+
+
+
+
+void setup() {
+
 }
 
 void loop() {
   maze[x][y]=1;
+  if (yon==0){
+   
+  }else if (yon==1){
+   
+  }else if (yon==2){
+   
+  }else if (
 }
