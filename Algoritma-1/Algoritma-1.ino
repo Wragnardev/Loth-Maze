@@ -50,7 +50,6 @@ void forward(){
 
 
 void setup() {
-  Serial.begin(9600);
   pinMode(6, INPUT);
   pinMode(5, INPUT);
   pinMode(4, INPUT);
@@ -62,7 +61,6 @@ void loop() {
   leftSensor=digitalRead(5);
   forwardSensor=digitalRead(6);
   rightSensor=digitalRead(2);
-  Serial.println(rightSensor);
   maze[x][y]=1;
   if(yon==0){
     if(rightSensor==1 && maze[x][y+1]==0){
@@ -118,6 +116,65 @@ void loop() {
     }
     else if(rightSensor){
       right();
+      forward();
+    }
+    else{
+      back();
+    }
+  }else if(yon==2){
+    if(leftSensor==1 && maze[x][y+1]){
+     left();
+     forward();
+    }
+    else if(forwardSensor==1 && maze[x+1][y]){
+     forward();
+    }
+    else if(rightSensor==1 && maze[x][y-1]){
+      right();
+      forward(); 
+    }
+    else if(maze[x-1][y]==1){
+      back();
+    }
+    else if(leftSensor==1){
+      left();
+      forward();
+    }
+    else if(forwardSensor==1){
+      forward();
+    }
+    else if(rightSensor==1){
+      right();
+      forward();
+    }
+    else{
+      back();
+    }
+  }
+  else if(yon==3){
+    if(leftSensor==1 && maze[x+1][y]){
+     left();
+     forward();
+    }
+    else if(rightSensor==1 && maze[x-1][y]){
+     forward();
+    }
+    else if(forwardSensor==1 && maze[x][y-1]){
+      right();
+      forward(); 
+    }
+    else if(maze[x][y+1]==1){
+      back();
+    }
+    else if(leftSensor==1){
+      left();
+      forward();
+    }
+    else if(rightSensor==1){
+      right();
+      forward();
+    }
+    else if(forwardSensor==1){
       forward();
     }
     else{
