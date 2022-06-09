@@ -1,7 +1,7 @@
-#define ma 8
-#define ca 9
-#define mb 10
-#define cb 11
+#define ma 14
+#define ca 15
+#define mb 16
+#define cb 17
 
 void setup()
 {
