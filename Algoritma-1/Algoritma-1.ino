@@ -1,3 +1,4 @@
+#define wbSensor 8 //siyah beyaz sensör
 #define fSensor 6 //ön sensör
 #define lSensor 5 //sol sensör
 #define rSensor 4 //sağ sensör
