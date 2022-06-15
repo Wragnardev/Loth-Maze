@@ -11,6 +11,6 @@ void setup()
 void loop()
 {
   a = digitalRead(wbSensor);
-  println(a);
+  Serial.println(a);
   delay(100);
 }

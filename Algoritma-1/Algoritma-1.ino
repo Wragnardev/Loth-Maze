@@ -1,9 +1,10 @@
-#define wbSensor 8 //siyah beyaz sensör
-#define fSensor 6 //ön sensör
-#define lSensor 5 //sol sensör
-#define rSensor 4 //sağ sensör
-#define rbSensor 3 //sağ arka sensör
-#define lbSensor 2 //sol arka sensör
+
+#define wbSensor 8 
+#define fSensor 14
+#define lSensor 15
+#define rSensor 16
+#define rbSensor 17
+#define lbSensor 18
 
 //0=left 1=forward 2=right 3=backward
 
@@ -61,11 +62,15 @@ void forward(){
 
 
 void setup() {
-  pinMode(6, INPUT);
-  pinMode(5, INPUT);
-  pinMode(4, INPUT);
-  pinMode(3, INPUT);
-  pinMode(2, INPUT);
+  pinMode(14, INPUT);
+  pinMode(15, INPUT);
+  pinMode(16, INPUT);
+  pinMode(17, INPUT);
+  pinMode(18, INPUT);
+  pinMode(8, INPUT);
+  pinMode(9, INPUT);
+  pinMode(10, INPUT);
+    
 }
 
 void loop() {
@@ -74,6 +79,18 @@ void loop() {
   rSensor = digitalRead(rSensor);
   lbSensor = digitalRead(lbSensor);
   rbSensor = digitalRead(rbSensor);
+  Serial.print(lSensor);
+  Serial.print("\t");
+  Serial.print(fSensor);
+  Serial.print("\t");
+  Serial.print(rSensor);
+  Serial.print("\t");
+  Serial.print(lbSensor);
+  Serial.print("\t");
+  Serial.print(rbSensor);
+  Serial.println();
+  
+  
   maze[x][y]=1;
   if(yon == 0){
     if(rSensor == 1 and rbSensor == 1 && maze[x][y+1]==0){
@@ -169,7 +186,7 @@ void loop() {
      left();
      forward();
     }
-    else if(rSensor == 1 rbSensor == 1 && maze[x-1][y]){
+    else if(rSensor == 1 and rbSensor == 1 && maze[x-1][y]){
      forward();
     }
     else if(fSensor == 1 && maze[x][y-1]){
